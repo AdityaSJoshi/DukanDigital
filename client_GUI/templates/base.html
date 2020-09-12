@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Dukan Portal</title>
+      {% else %}
+      <title>Welcome to Admin Site</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Goto: <a href="/new_item">{nav bar here}</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
