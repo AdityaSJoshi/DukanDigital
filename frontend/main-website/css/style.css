@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Varela Round', sans-serif;
+  line-height: 1.4;
+  padding: 0;
+  background: white;
+  color: #051b3f;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/* styling  navbar */
+.logoimg{
+    display: none;
+}
+.navbar{
+    min-height: 90px;
+    background-color: #7400B8 !important; 
+}
+.navbar-expand-lg .navbar-collapse{
+    justify-content: space-between;
+}
+.navbar .navbar-brand img{
+    height: 50px;
+}
+.nav1{
+    margin-left: 50px;
+}
+@media only screen and (max-width: 1000px) {
+    .nav1{
+        margin-left: 0;
+    }
+    .logoimg{
+        display: flex;
+    }
+    .logotext{
+        display: none;
+    }
+}
+.nav-link{
+    color: white !important;
+    font-size: larger;
+    font-weight: bolder;
+}
+ul  li.nav-item a:hover{
+    color: gainsboro !important;
+}
+
+/* hero section */
+section.hero-section .containerr{
+    width: 75vw;
+    margin: 0 auto;
+}
+  
