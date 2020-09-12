@@ -13,18 +13,19 @@
         </p>
         <p>
             {{ form.description.label }}<br>
-            {{ form.description(size=32) }}<br>
+            {{ form.description(width=32) }}<br>
             {% for error in form.description.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-        <!--p>{{ form.remember_me() }} {{ form.remember_me.label }}</p-->
-        <p>{{ form.submit() }}</p>
         <p>
-            {{ form.Price.label }}<br>
+            {{ form.price.label }}<br>
+            {{ form.price }}<br>
             {% for error in form.description.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+        <p>{{ form.submit() }}</p>
+        
     </form>
 {% endblock %}

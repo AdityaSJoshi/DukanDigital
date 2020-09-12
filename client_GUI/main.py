@@ -15,15 +15,16 @@ def index():
 @app.route('/new_item')
 def add_item():
     form = item()
-    return render_template('add_item.html', title='Sign In', form=form)
+    return render_template('add_item.html', title='It is done?', form=form)
 
 @app.route('/new_item', methods=['GET', 'POST'])
 def login():
     form = item()
+    print(form.validate_on_submit())
     if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.name.data, form.remember_me.data))
-        return redirect('/index')
+        flash('Item Added by user {} \n {} \n{}' .format(
+            form.name.data,form.description.data,form.price))
+        return redirect('/success')
     return render_template('add_item.html', title='New item', form=form)
 
 
