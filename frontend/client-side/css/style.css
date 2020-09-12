@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
 *,
 *::before,
 *::after {
@@ -10,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.4;
   padding: 0;
   background: white;
@@ -20,6 +22,9 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+.purple-text{
+    color: #7400b8;
 }
 /* styling  navbar */
 .logoimg {
@@ -39,8 +44,16 @@ a {
 .navbar-expand-lg .navbar-collapse {
   justify-content: space-between;
 }
+.navbar .navbar-brand {
+  display: flex;
+}
 .navbar .navbar-brand img {
   height: 50px;
+}
+.brand-name {
+  font-weight: 500;
+  padding-left: 10px;
+  color: white;
 }
 .nav1 {
   margin-left: 50px;
@@ -66,10 +79,34 @@ ul li.nav-item a:hover {
 }
 
 /* hero section */
-section.hero-section .containerr {
-  width: 75vw;
-  margin: 0 auto;
+
+.store{
+  margin: 100px auto;
 }
-.center {
-  margin: 50px 0;
+.message{
+    font-weight: bold;
+}
+.store-name{
+    font-weight: bolder;
+}
+.small-image{
+    height: 30px;
+    width: 30px;
+}
+.store-info{
+    display: flex;
+    justify-content: space-between;
+}
+.description{
+    display: flex;
+}
+.description div{
+    margin-right: 20px;
+}
+.other-info{
+    display: flex;
+    justify-content: space-around;
+}
+.other-info div{
+    margin-right: 20px;
 }
