@@ -111,3 +111,6 @@ ul li.nav-item a:hover {
     margin-right: 20px;
 }
 /* Product Tiles */
+.product-card{
+  width: 800px;
+}
