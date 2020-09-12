@@ -1,7 +1,7 @@
 from flask import Flask,render_template,flash,redirect
 from flaskwebgui import FlaskUI 
 from add_product import item
-
+from database.models import USER
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'make this a secret later lol'
 
