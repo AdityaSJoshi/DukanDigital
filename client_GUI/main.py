@@ -7,6 +7,8 @@ app.config['SECRET_KEY'] = 'make this a secret later lol'
 ui = FlaskUI(app)
 
 
+ui = FlaskUI(app)
+
 @app.route("/")
 def index():
   return render_template('base.html')
