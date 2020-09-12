@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'make this a secret later lol'
 
 
-#ui = FlaskUI(app)
+ui = FlaskUI(app)
 
 @app.route("/")
 def index():
@@ -20,5 +20,5 @@ def add_item():
     return render_template('add_item.html', title='Sign In', form=form)
 
 
-app.run(debug=True)
-#ui.run(debug=True)
+# app.run(debug=True)
+ui.run(debug=True)
