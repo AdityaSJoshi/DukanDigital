@@ -16,17 +16,20 @@ def index():
 def add_item():
     form = item()
     return render_template('add_item.html', title='It is done?', form=form)
+@app.route('/success')
+def success():
+    return render_template('success.html', title='Successfully added')
 
 @app.route('/new_item', methods=['GET', 'POST'])
 def login():
     form = item()
     print(form.validate_on_submit())
     if form.validate_on_submit():
-        flash('Item Added by user {} \n {} \n{}' .format(
-            form.name.data,form.description.data,form.price))
+        flash('Item Added by user: {} , {} , {}' .format(
+            form.name.data,form.description.data,form.price.data))
         return redirect('/success')
     return render_template('add_item.html', title='New item', form=form)
 
 
 app.run(debug=True)
-#ui.run(debug=True)
+#ui.run()
