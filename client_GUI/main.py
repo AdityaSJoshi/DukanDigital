@@ -1,12 +1,11 @@
 from flask import Flask,render_template,flash,redirect
 from flaskwebgui import FlaskUI 
-from add_product import item
+from form_parts import item
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'make this a secret later lol'
+ui = FlaskUI(app)
 
-
-#ui = FlaskUI(app)
 
 @app.route("/")
 def index():
@@ -25,11 +24,11 @@ def login():
     form = item()
     print(form.validate_on_submit())
     if form.validate_on_submit():
-        flash('Item Added by user: {} , {} , {}' .format(
-            form.name.data,form.description.data,form.price.data))
+        datas=[form.name.data,form.description.data,form.price.data]
+        [flash(i) for i in datas]
         return redirect('/success')
     return render_template('add_item.html', title='New item', form=form)
 
 
-app.run(debug=True)
-#ui.run()
+#app.run(debug=True)
+ui.run()
