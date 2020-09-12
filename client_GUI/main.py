@@ -20,5 +20,8 @@ def add_item():
     return render_template('add_item.html', title='Sign In', form=form)
 
 
-# app.run(debug=True)
-ui.run(debug=True)
+if __name__ == '__main__':
+    app.run(port=5000, debug=True, host="0.0.0.0")  
+  # print(ui)
+  # ui.run(debug=True)
+
