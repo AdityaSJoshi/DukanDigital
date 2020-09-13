@@ -124,6 +124,11 @@ ul li.nav-item a:hover {
   margin: 10px 0px;
   border-radius: 10px !important;
 }
+.purple-btn{
+    background-color: #7400b8 !important;
+    font-size: 1.1em;
+    font-weight: bold;
+}
 .product-name, .product-cost{
   font-size: 1.25em !important;
   font-weight: bold; 
@@ -132,7 +137,20 @@ ul li.nav-item a:hover {
   height: 50px;
   width: 50px;
 }
+.profile-pic{
+    height: 50px;
+    width: 50px;
+}
+.search-bar{
+    margin: 2em;
+}
+.rule{
+    size: 2em !important;
+}
 .not-available{
   background-color: thistle;
   color: sienna;
+}
+.card{
+    margin: 10px;
 }
