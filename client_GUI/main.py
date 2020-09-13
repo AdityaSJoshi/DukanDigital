@@ -27,7 +27,8 @@ def login():
         #print(user)
         if not user:
             # tell user values are incorrect
-            return render_template('login.html', title='Sign In', form=form, data = "Credentials incorrect")
+            return render_template('login.html', title='Sign In', form=form, data = 
+                                {"type":"alert alert-danger","message":"Credentials incorrect"})
         # Get the shop name from the DB based on the username and pass
         return render_template('landing.html', data=user)
     return render_template('login.html', title='Sign In', form=form)
@@ -57,7 +58,7 @@ def register():
         
         #datas=[form.Name.data,form.Email.data,form.Password.data,form.ShopName.data,form.ShopDescription.data]
         #print(datas)
-        return render_template('login.html',data="Registered Successfully")
+        return render_template('login.html',data={"type":"alert alert-success","message":"Registered Successfully"})
     # else:
     #    return render_template('register.html', title='Error', form=form,data="Something went Wrong")
     return render_template('register.html', title='Sign up', form=form)

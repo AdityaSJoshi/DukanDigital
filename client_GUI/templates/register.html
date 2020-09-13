@@ -6,7 +6,9 @@
 
 {% block content %}
     {% if taken %}
-        <div>{{taken}}</div>
+    <div class="alert alert-danger" role="alert">
+        {{taken}}
+    </div>
     {% endif %}
     <h1>Register</h1>
     <form action="" method="post" novalidate>

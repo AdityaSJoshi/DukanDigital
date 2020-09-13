@@ -7,7 +7,9 @@
 {% block content %}
    <h1>Sign In</h1>
    {% if data %}
-        <p>{{ data }}</p>
+        <div class="{{ data.type }}" role="alert">
+            {{ data.message }}
+        </div>
    {% endif %}
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
