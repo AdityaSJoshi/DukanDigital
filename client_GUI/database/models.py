@@ -8,20 +8,10 @@ import uuid
 from mongoengine import (DateTimeField, StringField, ReferenceField, ListField,
                          FileField, ImageField, EmailField, BooleanField,
                          IntField)
-# connect(
-#     'app12345678',
-#     username='heroku',
-#     password='a614e68b445d0d9d1c375740781073b4',
-#     host='mongodb://<user>:<password>@alex.mongohq.com:10043/app12345678',
-#     port=10043
-# )
-
-connect(db="DukanDigital", alias='default', port=27018)
+connect(db="DukanDigital", alias='default')
 
 db = MongoEngine()
 
-# def initialize_db(app):
-#     db.init_app(app)
 
 
 class BaseDocument(Document):
@@ -34,32 +24,24 @@ class BaseDocument(Document):
     }
 
 
-class USER(BaseDocument):
-    # email = StringField('email',
-    #                     validators=[
-    #                         InputRequired(),
-    #                         Email(message='Invalid email'),
-    #                         Length(max=30)
-    #                     ])
-    # password = PasswordField(
-    #     'password', validators=[InputRequired(),
-    #                             Length(min=6, max=20)])
+ class USER(BaseDocument):
+        
     user_id = StringField(default=str(uuid.uuid4()))
     email = EmailField(unique=True, required=True)
     password = StringField(required=True)
-    first_name = StringField(max_length=20)
-    last_name = StringField(max_length=20)
-    full_name = StringField(max_length=40)
-    mobile_no = StringField(min_length=10, max_length=10)
-    role = StringField()
-    meta = {'indexes': ['email', 'mobile_no', 'user_id'], 'collection': 'users'}
+    name = StringField(max_length=40)
+    shop_name = StringField(max_length=40)
+    shop_desc= StringField(max_length=100)
 
-    def __init__(self, email, password, *args, **kwargs):
+    def __init__(self, email, password, name, shop_name, shop_desc, *args, **kwargs):
         super(USER, self).__init__(*args, **kwargs)
         self.email = email
+        self.password = password
+        self.name = name
+        self.shop_name = shop_name
+        self.shop_desc = shop_desc
+        
 
-
- 
  
 
    
