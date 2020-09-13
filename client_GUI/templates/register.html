@@ -1,52 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/css/style.css" />
-    <title>Dukan Digital | Shop-Admin</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="brand">
-          <a class="navbar-brand" href="/"
-            ><img
-              src="./static/images/logowhite.png"
-              alt="#"
-              class="logotext"
-            /><img
-              src="./static/images/logowhite.png"
-              alt="#"
-              class="logoimg"
-            />
-            <h1 class="brand-name">Welcome to Shop-Admin app</h1>
-          </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav nav2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+{% extends "base.html" %}
+
+{% block nav %}
+<li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+{% endblock %}
+
+{% block content %}
     {% if data %}
         <div>{{data}}</div>
     {% endif %}
@@ -92,5 +50,4 @@
         <p>{{ form.submit() }}</p>
         
     </form>
-  </body>
-  </html>
+{% endblock %}

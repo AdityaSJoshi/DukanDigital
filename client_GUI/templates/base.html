@@ -37,13 +37,17 @@
               alt="#"
               class="logoimg"
             />
-            <h1 class="brand-name">{{data.shop_name}}</h1>
+            {% if data %}
+              <h1 class="brand-name">{{data.shop_name}}</h1>
+            {% else %}
+              <h1 class="brand-name">Welcome to Shop-Admin</h1>
+            {% endif %}
+
           </a>
         </div>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav nav2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="/new_item">Add Item</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Shop Details</a></li>
+            {% block nav %}{% endblock %}
           </ul>
         </div>
       </nav>
