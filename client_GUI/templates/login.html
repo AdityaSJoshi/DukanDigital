@@ -37,17 +37,30 @@
               alt="#"
               class="logoimg"
             />
-            <h1 class="brand-name">{{data.shop_name}}</h1>
+            <h1 class="brand-name">Welcome to the Shop-Admin App</h1>
           </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav nav2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="/new_item">Add Item</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Shop Details</a></li>
-          </ul>
         </div>
       </nav>
     </header>
-    {% block content %}{% endblock %}
-    </body>
+    <h1>Sign In</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+  </body>
 </html>
