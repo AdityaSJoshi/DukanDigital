@@ -27,8 +27,11 @@ def login():
     form = item()
     print(form.validate_on_submit())
     if form.validate_on_submit():
+        print(USER)
+        
         datas=[form.name.data,form.description.data,form.price.data]
         [flash(i) for i in datas]
+        print(datas)
         return redirect('/success')
     return render_template('add_item.html', title='New item', form=form)
 
