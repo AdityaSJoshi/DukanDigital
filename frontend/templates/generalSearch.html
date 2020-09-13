@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style_general.css" />
+
+    <title>Dukan Digital | General Search</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="brand">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="../static/images/logowhite.png"
+              alt="#"
+              class="logotext"
+            /><img
+              src="../static/images/logowhite.png"
+              alt="#"
+              class="logoimg"
+            />
+            <h1 class="brand-name">Welcome</h1>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav nav2 my-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Product Search</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Shops</a></li>
+          </ul>
+          <ul class="navbar-nav nav2 my-lg-0">
+            <li class="nav-item"><img src="https://images.unsplash.com/photo-1582089516947-ba66eacdec6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80" alt="profile-pic" class="profile-pic"></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{Customer Name}}</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="search-bar">
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+      <hr class="rule" />
+
+      <div class="product-grid">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  We need to write the description of the product here
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: {{item.price}}</li>
+                <li class="list-group-item">Available:{{item.stock}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn purple-btn btn-primary">view details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  We need to write the description of the product here
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: {{item.price}}</li>
+                <li class="list-group-item">Available:{{item.stock}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn purple-btn btn-primary">view details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  We need to write the description of the product here
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: {{item.price}}</li>
+                <li class="list-group-item">Available:{{item.stock}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn purple-btn btn-primary">view details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  We need to write the description of the product here
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: {{item.price}}</li>
+                <li class="list-group-item">Available:{{item.stock}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn purple-btn btn-primary">view details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  We need to write the description of the product here
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: {{item.price}}</li>
+                <li class="list-group-item">Available:{{item.stock}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn purple-btn btn-primary">view details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                  We need to write the description of the product here
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: {{item.price}}</li>
+                <li class="list-group-item">Available:{{item.stock}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="btn purple-btn btn-primary">view details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+</html>
