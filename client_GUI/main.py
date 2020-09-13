@@ -1,6 +1,7 @@
 from flask import Flask,render_template,flash,redirect
 from flaskwebgui import FlaskUI 
-from form_parts import item,LoginForm
+from database.models import USER
+from form_parts import item
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'make this a secret later lol'
@@ -9,8 +10,7 @@ app.config['SECRET_KEY'] = 'make this a secret later lol'
 
 ui = FlaskUI(app)
 
-#where the user lands if logged in successfully
-@app.route('/index', methods=['GET', 'POST'])
+@app.route("/")
 def index():
     return render_template('base.html')
 
@@ -42,4 +42,5 @@ def success():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    # app.run(port=5000, debug=True, host="0.0.0.0")  
     #ui.run()
