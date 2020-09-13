@@ -10,6 +10,15 @@ app.config['SECRET_KEY'] = 'make this a secret later lol'
 
 #ui = FlaskUI(app)
 
+
+# where the user lands if logged in successfully
+@app.route('/index', methods=['GET', 'POST'])
+def index():
+    return render_template('base.html')
+
+# Login for the user
+
+
 # Login for the user
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -23,10 +32,13 @@ def login():
         print(user)
         if not user:
             # tell user values are incorrect
-            return "Please try again, ur info seems incorrect"
+            return
         # Get the shop name from the DB based on the username and pass
-        return render_template('landing.html', data={"shop_name": "Shop name from DB here"})
+        return render_template('base.html', data={"shop_name": "Shop name from DB here"})
     return render_template('login.html', title='Sign In', form=form)
+
+# Form for the user to add a new item
+
 
 # register for user
 @app.route('/register', methods=['GET', 'POST'])
@@ -85,6 +97,7 @@ def success():
 
 
 if __name__ == '__main__':
- app.run(debug=True)
+    # app.run(port=5000, debug=True, host="0.0.0.0")
   # print(ui)
-  #ui.run()
+    ui.run()
+
