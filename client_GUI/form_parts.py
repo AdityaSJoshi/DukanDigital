@@ -14,3 +14,11 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
+
+class Register(FlaskForm):
+    Name = StringField('Username', validators=[DataRequired()])
+    Email = StringField('Email', validators=[DataRequired()])
+    Password = PasswordField('Password', validators=[DataRequired()])
+    ShopName = StringField('ShopName', validators=[DataRequired()])
+    ShopDescription = TextAreaField('ShopDescription', validators=[DataRequired()])
+    submit = SubmitField('Create Shop')

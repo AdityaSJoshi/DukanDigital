@@ -8,10 +8,10 @@ import uuid
 from mongoengine import (DateTimeField, StringField, ReferenceField, ListField,
                          FileField, ImageField, EmailField, BooleanField,
                          IntField)
+
 connect(db="DukanDigital", alias='default')
 
 db = MongoEngine()
-
 
 
 class BaseDocument(Document):
@@ -24,8 +24,7 @@ class BaseDocument(Document):
     }
 
 
- class USER(BaseDocument):
-        
+class USER(BaseDocument):
     user_id = StringField(default=str(uuid.uuid4()))
     email = EmailField(unique=True, required=True)
     password = StringField(required=True)
@@ -40,7 +39,7 @@ class BaseDocument(Document):
         self.name = name
         self.shop_name = shop_name
         self.shop_desc = shop_desc
-        
+            
 
  
 

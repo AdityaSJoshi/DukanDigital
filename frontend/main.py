@@ -5,7 +5,7 @@ app = Flask(__name__)
 #where the user lands if logged in successfully
 @app.route('/browse', methods=['GET', 'POST'])
 def browse():
-    return render_template('base.html')
+    return render_template('browse.html')
 
 @app.route('/')
 def main():
