@@ -9,15 +9,19 @@ def browse():
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    return render_template('index.html',title='Home')
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html',title='About')
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('login.html',title='Login')
 
 @app.route('/signup')
 def signup():
-    return render_template('signup.html')
+    return render_template('signup.html',title='Sign up')
 
 
 if __name__ == "__main__":
