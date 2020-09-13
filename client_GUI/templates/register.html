@@ -47,26 +47,50 @@
         </div>
       </nav>
     </header>
-   
-   <h1>Sign In</h1>
+    {% if data %}
+        <div>{{data}}</div>
+    {% endif %}
+    <h1>Register</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
+            {{ form.Name.label }}<br>
+            {{ form.Name(size=32) }}<br>
+            {% for error in form.Name.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
+            {{ form.Email.label }}<br>
+            {{ form.Email(size=32) }}<br>
+            {% for error in form.Email.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>
+            {{ form.Password.label }}<br>
+            {{ form.Password(size=32) }}<br>
+            {% for error in form.Password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.ShopName.label }}<br>
+            {{ form.ShopName(size=32) }}<br>
+            {% for error in form.ShopName.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.ShopDescription.label }}<br>
+            {{ form.ShopDescription(width=32) }}<br>
+            {% for error in form.ShopDescription.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        
         <p>{{ form.submit() }}</p>
+        
     </form>
-</body>
-</html>
+  </body>
+  </html>

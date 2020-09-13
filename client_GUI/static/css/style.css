@@ -136,3 +136,7 @@ ul li.nav-item a:hover {
   background-color: thistle;
   color: sienna;
 }
+
+.topnav-right {
+  float: right;
+}
