@@ -37,8 +37,8 @@
               alt="#"
               class="logoimg"
             />
-            {% if user %}
-              <h1 class="brand-name">{{user.shop_name}}</h1>
+            {% if data %}
+              <h1 class="brand-name">{{data['shop_name']}}</h1>
             {% else %}
               <h1 class="brand-name">Welcome to Shop-Admin</h1>
             {% endif %}

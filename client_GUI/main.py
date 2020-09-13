@@ -3,7 +3,11 @@ from flask import Flask, render_template, flash, redirect
 from flaskwebgui import FlaskUI
 from database.models import USER
 from form_parts import item, LoginForm, Register
+import json
 
+with open("items.json",'r') as f:
+    items_list=json.load(f)
+user=None
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'make this a secret later lol'
 
@@ -17,6 +21,7 @@ def index():
 # Login for the user
 @app.route('/', methods=['GET', 'POST'])
 def login():
+    global user
     form = LoginForm()
     if form.validate_on_submit():
         # check if email and passwords are correct
@@ -24,13 +29,13 @@ def login():
         user_collection = USER._get_collection()
         # check if user already exists
         user = user_collection.find_one({'email': form.username.data, 'password': form.password.data})
-        #print(user)
+        #print('###########',user['shop_name'],user)
         if not user:
             # tell user values are incorrect
             return render_template('login.html', title='Sign In', form=form, data = 
                                 {"type":"alert alert-danger","message":"Credentials incorrect"})
-        # Get the shop name from the DB based on the username and pass
-        return render_template('landing.html', data=user)
+        # Get the shop name and items from the DB based on the username and pass
+        return render_template('landing.html', data=user ,item=items_list)
     return render_template('login.html', title='Sign In', form=form)
 
 # register for user
@@ -73,9 +78,13 @@ def add_item():
 
         [flash(i) for i in datas]
         print(datas)
-        return redirect('/success')
-    else:
-        return render_template('add_item.html', title='Error', form=form, data="Something went Wrong")
+        items_list[form.name.data]=form.price.data
+        with open('items.json', 'w') as fp:
+            json.dump(items_list, fp)
+        return render_template('landing.html',new_item={"type":"alert alert-success","message":f"Successfully added {form.name.data}"}
+        ,item=items_list)
+    #What if something went wrong?
+    #return render_template('add_item.html', title='Error', form=form, data="Something went Wrong")
     return render_template('add_item.html', title='Adding a new item', form=form)
 
 
