@@ -5,7 +5,6 @@ from form_parts import item,LoginForm,Register
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'make this a secret later lol'
-#ui = FlaskUI(app)
 
 
 ui = FlaskUI(app)
@@ -36,8 +35,11 @@ def register():
 def add_item():
     form = item()
     if form.validate_on_submit():
+        print(USER)
+        
         datas=[form.name.data,form.description.data,form.price.data]
         [flash(i) for i in datas]
+        print(datas)
         return redirect('/success')
     else:
         return render_template('add_item.html', title='Error', form=form,data="Something went Wrong")
@@ -48,7 +50,8 @@ def add_item():
 def success():
     return render_template('success.html', title='Successfully added')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+if __name__ == '__main__':
     # app.run(port=5000, debug=True, host="0.0.0.0")  
-    #ui.run()
+  # print(ui)
+    ui.run()
